@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component  } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input  } from '@angular/core';
 import { FontSizeDirective } from '../directives/font-size.directive';
 import { BackgroundColorDirective } from '../directives/background-color.directive';
 import { HoverBlockDirective } from '../directives/hover-block.directive';
@@ -18,7 +18,7 @@ import { HoverBlockDirective } from '../directives/hover-block.directive';
     HoverBlockDirective,
   ],
   template: `
-    <p>Hello Connie!!! Hover me to bold text</p>
+    <p>Hello {{username}}!!! Hover me to bold text</p>
   `,
   styles: [`
     :host {
@@ -31,4 +31,7 @@ import { HoverBlockDirective } from '../directives/hover-block.directive';
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HelloUsernameComponent {}
+export class HelloUsernameComponent {
+  @Input({ required: true })
+  username!: string;
+}

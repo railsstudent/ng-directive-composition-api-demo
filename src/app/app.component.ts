@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HelloBackgroundBlockComponent } from './hello-background-block/hello-background-block.component';
 import { HelloUsernameComponent } from './hello-username/hello-username.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,9 @@ import { HelloUsernameComponent } from './hello-username/hello-username.componen
   template: `
     <h3>Practice standalone directive API</h3>
 
-    <app-hello-username [bgColor]="bgColor" [size]="size"></app-hello-username>
+    <app-hello-username [username]="'John Doe'" [bgColor]="bgColor" [size]="size"></app-hello-username>
 
-    <app-hello-username></app-hello-username>
+    <app-hello-username [username]="'John Doe (Default directive values)'"></app-hello-username>
 
     <app-hello-background-block 
       [backgroundColor]="bgColor" [size]="size"></app-hello-background-block>
@@ -63,5 +64,13 @@ import { HelloUsernameComponent } from './hello-username/hello-username.componen
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'ng-directive-composition-api-demo';
+  size = 12;
+  bgColor = 'yellow';
+
+  minSize= 12;
+  maxSize= 64;
+
+  constructor(title: Title) {
+    title.setTitle('ng-directive-composition-api-demo');
+  }
 }

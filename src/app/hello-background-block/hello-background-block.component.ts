@@ -8,7 +8,7 @@ import { BackgroundBlockDirective } from '../directives/background-block.directi
     BackgroundBlockDirective
   ],
   template: `
-    <p>Hello BackgroundBlockDirective!!!</p>
+    <p>I use BackgroundBlockDirective that is composed of 3 other directives!!!</p>
   `,
   styles: [`
     :host {
