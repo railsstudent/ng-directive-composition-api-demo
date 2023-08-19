@@ -18,6 +18,8 @@ import { Title } from '@angular/platform-browser';
     <app-hello-background-block 
       [backgroundColor]="bgColor" [size]="size"></app-hello-background-block>
 
+    <app-hello-background-block></app-hello-background-block>
+
     <div>
       <label for="size">
         <span>Size:</span>

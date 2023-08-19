@@ -20,8 +20,8 @@ import { HoverBlockDirective } from './hover-block.directive';
 })
 export class BackgroundBlockDirective {
   @Input()
-  size = 18;
+  size!: string;
 
   @Input()
-  bgColor = 'red';
+  bgColor!: string;
 }
