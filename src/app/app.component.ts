@@ -1,15 +1,30 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HelloBackgroundBlockComponent } from './hello-background-block/hello-background-block.component';
-import { HelloUsernameComponent } from './hello-username/hello-username.component';
 import { Title } from '@angular/platform-browser';
+import { BackgroundColorDirective } from './directives/background-color.directive';
+import { FontSizeDirective } from './directives/font-size.directive';
+import { HoverBlockDirective } from './directives/hover-block.directive';
+import { HelloBackgroundBlockComponent } from './hello-background-block/hello-background-block.component';
+import { HelloUsernameWithoutApiComponent } from './hello-username-without-api/hello-username-without-api.component';
+import { HelloUsernameComponent } from './hello-username/hello-username.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, HelloUsernameComponent, HelloBackgroundBlockComponent],
+  imports: [FormsModule, HelloUsernameComponent, HelloBackgroundBlockComponent, 
+    HelloUsernameWithoutApiComponent,
+    FontSizeDirective,
+    BackgroundColorDirective,
+    HoverBlockDirective
+  ],
   template: `
     <h3>Practice standalone directive API</h3>
+
+    <p>Host component uses directives the old way</p>
+    <app-hello-username-without-api appFontSize
+      appBackgroundColor appHoverBlock
+      [username]="'John Doe'" [size]="size" [bgColor]="bgColor">
+    </app-hello-username-without-api>
 
     <p>Host component that host directives and inputs</p>
     <app-hello-username [username]="'John Doe'" [bgColor]="bgColor" [size]="size"></app-hello-username>
