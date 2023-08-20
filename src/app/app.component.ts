@@ -11,13 +11,16 @@ import { Title } from '@angular/platform-browser';
   template: `
     <h3>Practice standalone directive API</h3>
 
+    <p>Host component that host directives and inputs</p>
     <app-hello-username [username]="'John Doe'" [bgColor]="bgColor" [size]="size"></app-hello-username>
 
-    <app-hello-username [username]="'John Doe (Default directive values)'"></app-hello-username>
+    <p>Host component that uses host directives and default values</p>
+    <app-hello-username [username]="'John Doe'"></app-hello-username>
 
-    <app-hello-background-block 
-      [backgroundColor]="bgColor" [size]="size"></app-hello-background-block>
+    <p>Host component that uses composite host directive</p>
+    <app-hello-background-block [backgroundColor]="bgColor" [size]="size"></app-hello-background-block>
 
+    <p>Host component that uses composite host directive and default values</p>
     <app-hello-background-block></app-hello-background-block>
 
     <div>
