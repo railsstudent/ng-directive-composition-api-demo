@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, Input  } from '@angular/core';
-import { FontSizeDirective } from '../directives/font-size.directive';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { BackgroundColorDirective } from '../directives/background-color.directive';
+import { ClickDirective } from '../directives/click.directive';
+import { FontSizeDirective } from '../directives/font-size.directive';
 import { HoverBlockDirective } from '../directives/hover-block.directive';
 
 @Component({
@@ -16,6 +17,10 @@ import { HoverBlockDirective } from '../directives/hover-block.directive';
       inputs: ['bgColor'],
     },
     HoverBlockDirective,
+    {
+      directive: ClickDirective,
+      outputs: ['clicked'],
+    }
   ],
   template: `
     <p>Hello {{username}}!!! Hover me to bold text</p>

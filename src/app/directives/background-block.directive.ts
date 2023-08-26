@@ -1,5 +1,6 @@
 import { Directive, Input } from '@angular/core';
 import { BackgroundColorDirective } from './background-color.directive';
+import { ClickDirective } from './click.directive';
 import { FontSizeDirective } from './font-size.directive';
 import { HoverBlockDirective } from './hover-block.directive';
 
@@ -16,6 +17,10 @@ import { HoverBlockDirective } from './hover-block.directive';
       inputs: ['bgColor:backgroundColor'],
     },
     HoverBlockDirective,
+    {
+      directive: ClickDirective,
+      outputs: ['clicked'],
+    }
   ]
 })
 export class BackgroundBlockDirective {

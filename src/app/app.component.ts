@@ -27,13 +27,19 @@ import { HelloUsernameComponent } from './hello-username/hello-username.componen
     </app-hello-username-without-api>
 
     <p>Host component that host directives and inputs</p>
-    <app-hello-username [username]="'John Doe'" [bgColor]="bgColor" [size]="size"></app-hello-username>
+    <app-hello-username [username]="'John Doe'" [bgColor]="bgColor" [size]="size" 
+      (clicked)="helloUserClicked()"
+    ></app-hello-username>
+    <p>{{ clickedMsg }}</p>
 
     <p>Host component that uses host directives and default values</p>
     <app-hello-username [username]="'John Doe'"></app-hello-username>
 
     <p>Host component that uses composite host directive</p>
-    <app-hello-background-block [backgroundColor]="bgColor" [size]="size"></app-hello-background-block>
+    <app-hello-background-block [backgroundColor]="bgColor" [size]="size" 
+      (clicked)="helloBackgroundBlockClicked()">
+    </app-hello-background-block>
+    <p>{{ blockClickedMsg }}</p>
 
     <p>Host component that uses composite host directive and default values</p>
     <app-hello-background-block></app-hello-background-block>
@@ -90,7 +96,24 @@ export class AppComponent {
   minSize= 12;
   maxSize= 64;
 
+  clickedMsg = 'You are clicked 0 time';
+  clickedTimes = 0;
+
+  blockClickedMsg = 'You are clicked 0 time';
+  blockClickedTimes = 0;
+
+
   constructor(title: Title) {
     title.setTitle('ng-directive-composition-api-demo');
+  }
+
+  helloUserClicked() {
+    this.clickedTimes = this.clickedTimes + 1;
+    this.clickedMsg = `You are clicked ${this.clickedTimes} times`;
+  }
+
+  helloBackgroundBlockClicked() {
+    this.blockClickedTimes = this.blockClickedTimes + 1;
+    this.blockClickedMsg = `You are clicked ${this.blockClickedTimes} times`;
   }
 }
