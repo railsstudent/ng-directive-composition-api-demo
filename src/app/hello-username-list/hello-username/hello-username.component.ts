@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { BackgroundColorDirective } from '../directives/background-color.directive';
-import { ClickDirective } from '../directives/click.directive';
-import { FontSizeDirective } from '../directives/font-size.directive';
-import { HoverBlockDirective } from '../directives/hover-block.directive';
+import { BackgroundColorDirective } from '../../directives/background-color.directive';
+import { ClickDirective } from '../../directives/click.directive';
+import { FontSizeDirective } from '../../directives/font-size.directive';
+import { HoverBlockDirective } from '../../directives/hover-block.directive';
 
 @Component({
   selector: 'app-hello-username',

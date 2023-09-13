@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BackgroundBlockDirective } from '../directives/background-block.directive';
+import { BackgroundBlockDirective } from '../../directives/background-block.directive';
 
 @Component({
   selector: 'app-hello-background-block',
