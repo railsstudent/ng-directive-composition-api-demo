@@ -17,6 +17,10 @@ import { HelloUsernameComponent } from '../hello-username/hello-username.compone
     </div>
   `,
   styles: [`
+    :host {
+      display: block;
+    }
+
     div {
       border: 1px solid black;
       padding: 0.5rem;

@@ -61,7 +61,6 @@ import { HelloBackgroundBlockListComponent } from './hello-background-block-list
   styles: [`
     :host {
       display: block;
-      padding: 0.5rem;
     }
 
     label > span {

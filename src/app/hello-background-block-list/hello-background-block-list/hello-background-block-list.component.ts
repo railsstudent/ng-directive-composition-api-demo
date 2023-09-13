@@ -20,6 +20,10 @@ import { HelloBackgroundBlockComponent } from '../hello-background-block/hello-b
     </div>
   `,
   styles: [`
+    :host {
+      display: block;
+    }
+
     div {
       border: 1px solid black;
       padding: 0.5rem;
